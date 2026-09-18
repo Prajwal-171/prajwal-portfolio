@@ -1,137 +1,153 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Prajwal BS | Portfolio</title>
-<meta name="description" content="Prajwal BS — Information Science & Engineering student, developer and data enthusiast.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prajwal BS — Information Science and Engineering student, developer and problem solver.">
+  <title>Prajwal BS | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#020817; --bg2:#061126; --card:#09172d; --card2:#0c1b34;
+      --text:#f7f7fb; --muted:#b7bfd0; --purple:#9b5cff; --purple2:#6f35df;
+      --border:rgba(159,117,255,.18); --shadow:0 20px 55px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,sans-serif;background:radial-gradient(circle at 70% 10%,rgba(100,55,190,.11),transparent 30%),var(--bg);color:var(--text);line-height:1.65}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1160px,92%);margin:auto}
+    nav{position:fixed;top:0;left:0;right:0;height:70px;z-index:100;background:rgba(2,8,23,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .navin{height:100%;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-size:22px;font-weight:800;letter-spacing:-.6px}.logo span{color:var(--purple)}
+    .links{display:flex;gap:25px;align-items:center}.links a{font-size:14px;color:#d7dbea;position:relative;padding:23px 0}
+    .links a:hover,.links a.active{color:#fff}.links a.active:after{content:"";position:absolute;height:2px;background:var(--purple);left:0;right:0;bottom:10px}
+    .navbtn{border:0;background:linear-gradient(135deg,var(--purple2),var(--purple));color:#fff;padding:11px 16px;border-radius:10px;font-weight:700;cursor:pointer}
+    .menu{display:none;background:none;border:1px solid var(--border);color:#fff;border-radius:9px;padding:7px 10px;font-size:20px}
+    section{padding:90px 0 20px}
+    .hero{min-height:690px;padding-top:70px;display:grid;grid-template-columns:1fr 1fr;align-items:center;overflow:hidden}
+    .eyebrow{color:#b47cff;font-weight:700;font-size:18px;margin-bottom:16px}
+    h1{font-size:68px;line-height:1.08;letter-spacing:-3px;margin-bottom:16px}.name{white-space:nowrap}.name span{color:var(--purple)}
+    .role{font-size:21px;color:#b77dff;font-weight:700;margin-bottom:14px}
+    .lead{font-size:17px;color:#d0d5e0;max-width:570px}
+    .actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:10px;border:1px solid rgba(159,117,255,.55);font-weight:700}
+    .primary{background:linear-gradient(135deg,#7432db,#9b4dff);border:0}.secondary{background:rgba(4,12,29,.7)}
+    .socials{display:flex;gap:13px;margin-top:28px}.socials a{width:45px;height:45px;border-radius:50%;display:grid;place-items:center;background:#0d1a34;border:1px solid var(--border);font-weight:800}.socials a:hover{transform:translateY(-2px);border-color:#a56bff}
+    .portrait{height:620px;display:flex;justify-content:flex-end;align-items:end}.portrait img{height:100%;max-width:100%;object-fit:cover;object-position:center top;mask-image:linear-gradient(to right,transparent 0%,#000 12%,#000 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 12%,#000 100%)}
+    .section-title{font-size:30px;display:flex;align-items:center;gap:12px;margin-bottom:18px}.section-title:after{content:"";width:60px;height:2px;background:var(--purple);margin-top:24px;margin-left:-76px}
+    .section-title .ico{color:#a45dff;font-size:25px}
+    .about-text{color:#c8cfdd;max-width:900px;font-size:16px}.info-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+    .info{background:linear-gradient(145deg,var(--card),rgba(7,18,38,.72));border:1px solid var(--border);border-radius:10px;padding:18px}.info b{display:block;font-size:12px;color:#b5bfd1;margin-bottom:4px}.info span{font-size:14px}
+    .skills{display:grid;grid-template-columns:repeat(5,1fr);gap:13px;margin-top:25px}.skill{min-height:105px;border:1px solid var(--border);border-radius:10px;background:linear-gradient(145deg,var(--card),#071329);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:7px;transition:.2s}.skill:hover{transform:translateY(-3px);border-color:#8d51ef}.skill .sico{font-size:30px;color:#a76cff}.skill span{font-size:14px}
+    .projects-head{display:flex;justify-content:space-between;align-items:center}.outline{border:1px solid #8550d5;padding:9px 15px;border-radius:9px;color:#c18cff;font-size:13px}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:25px}.project{border:1px solid var(--border);border-radius:11px;background:linear-gradient(145deg,#0a1930,#071226);overflow:hidden}.project-body{padding:20px}.project h3{font-size:20px;margin-bottom:8px}.project p{color:#bdc6d5;font-size:14px}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:16px}.tag{font-size:11px;border:1px solid rgba(169,130,255,.22);border-radius:7px;padding:3px 8px;color:#c9cedb}.project-foot{border-top:1px solid rgba(255,255,255,.07);padding:13px 20px;display:flex;justify-content:space-between;font-size:13px}.project-foot a{color:#d9b8ff}
+    .edu{margin-top:25px;display:grid;grid-template-columns:1fr 1fr;gap:16px}.edu-card{padding:22px;border:1px solid var(--border);border-radius:11px;background:var(--card)}.edu-card h3{margin-bottom:5px}.edu-card p{color:#bac3d2;font-size:14px}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}.contact-copy p{color:#bdc6d5;max-width:540px}.contact-cards{display:grid;gap:12px}.contact-card{border:1px solid var(--border);border-radius:10px;background:var(--card);padding:16px 18px}.contact-card small{color:#aeb8ca;display:block}.contact-card strong{font-size:15px}
+    footer{margin-top:70px;padding:22px 0;border-top:1px solid rgba(255,255,255,.08);color:#929caf;font-size:12px}.footin{display:flex;justify-content:space-between;gap:20px}
+    @media(max-width:900px){.links{display:none}.menu{display:block}.navbtn{display:none}.hero{grid-template-columns:1fr;min-height:auto;padding:120px 0 0}.portrait{height:420px;justify-content:center}.portrait img{mask-image:none;-webkit-mask-image:none}.info-grid{grid-template-columns:repeat(2,1fr)}.skills{grid-template-columns:repeat(3,1fr)}.projects,.contact,.edu{grid-template-columns:1fr}}
+    @media(max-width:600px){h1{font-size:47px;letter-spacing:-2px}.role{font-size:17px}.lead{font-size:15px}.info-grid{grid-template-columns:1fr}.skills{grid-template-columns:repeat(2,1fr)}section{padding-top:75px}.hero{padding-top:105px}.portrait{height:360px}.projects-head{align-items:flex-end}.outline{display:none}.footin{flex-direction:column}}
+  </style>
 </head>
 <body>
-<header>
-  <nav class="nav wrap">
-    <a class="logo" href="#home">PRAJWAL<span>.</span></a>
-    <button class="menu" aria-label="Menu">☰</button>
+<nav>
+  <div class="container navin">
+    <a class="logo" href="#home">Prajwal <span>BS.</span></a>
     <div class="links">
-      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
-      <a href="#certifications">Certifications</a><a href="#contact">Contact</a>
+      <a class="active" href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
     </div>
-  </nav>
-</header>
+    <a class="navbtn" href="#contact">Contact Me ↗</a>
+    <button class="menu" onclick="toggleMenu()">☰</button>
+  </div>
+</nav>
 
 <main>
-<section id="home" class="hero">
-<div class="wrap hero-grid">
+<section id="home" class="hero container">
   <div>
-    <div class="eyebrow"><i></i> OPEN TO INTERNSHIPS & COLLABORATIONS</div>
-    <h1>Hi, I'm <span>Prajwal BS.</span><br>I build useful technology.</h1>
-    <p class="lead">3rd-year Information Science & Engineering student at CMR Institute of Technology, Bangalore, interested in software development, AI/ML, data analytics and emerging technologies.</p>
+    <div class="eyebrow">Hello, I'm</div>
+    <h1 class="name">Prajwal <span>BS.</span></h1>
+    <div class="role">Information Science and Engineering Student</div>
+    <p class="lead">A passionate developer and problem solver with interest in Data Analytics, AI/ML, Blockchain, and Full Stack Development. I love turning ideas into useful technology.</p>
     <div class="actions">
-      <a class="btn primary" href="#projects">View my work →</a>
-      <a class="btn secondary" href="#contact">Contact me</a>
+      <a class="btn primary" href="#projects">View My Work →</a>
+      <a class="btn secondary" href="#contact">Contact Me ✉</a>
     </div>
-    <div class="social">
-      <a href="https://github.com/Prajwal-171" target="_blank">GitHub ↗</a>
-      <a href="https://www.linkedin.com/in/prajwal-bs-a90b32333" target="_blank">LinkedIn ↗</a>
-      <a href="mailto:prajwalbs273@gmail.com">Email ↗</a>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/prajwal-bs-a90b32333" target="_blank" aria-label="LinkedIn">in</a>
+      <a href="https://github.com/Prajwal-171" target="_blank" aria-label="GitHub">GH</a>
+      <a href="mailto:prajwalbs273@gmail.com" aria-label="Email">✉</a>
     </div>
   </div>
-  <div class="photo-card">
-    <img src="profile.png" alt="Prajwal BS">
-    <div class="photo-label"><b>ISE</b><span>3rd Year · CMRIT</span></div>
-  </div>
-</div>
+  <div class="portrait"><img src="profile.png" alt="Prajwal BS professional portrait"></div>
 </section>
 
-<section id="about" class="section">
-<div class="wrap split">
-  <div><div class="number">01 / ABOUT</div><h2>A student with a <span>builder's mindset.</span></h2></div>
-  <div class="text">
-    <p>I enjoy learning by building practical projects. My work and coursework have introduced me to blockchain, RAG systems, machine learning, data analytics, databases and frontend development.</p>
-    <p>I am looking for opportunities where I can contribute to real engineering work, strengthen my skills and learn from experienced teams.</p>
-    <div class="stats"><div><b>03+</b><small>Projects</small></div><div><b>08+</b><small>Certifications & activities</small></div><div><b>10+</b><small>Technical skills</small></div></div>
+<section id="about"><div class="container">
+  <h2 class="section-title"><span class="ico">♙</span> About Me</h2>
+  <p class="about-text">I am an Information Science and Engineering student with a strong foundation in programming, databases, and problem solving. I enjoy working on real-world projects involving Python, Java, Data Analytics, AI/ML, Blockchain, RAG systems, and Web Development.</p>
+  <div class="info-grid">
+    <div class="info"><b>Location</b><span>Bangalore, Karnataka, India</span></div>
+    <div class="info"><b>Education</b><span>B.E. in Information Science & Engineering</span></div>
+    <div class="info"><b>Email</b><span>prajwalbs273@gmail.com</span></div>
+    <div class="info"><b>Availability</b><span>Open to Opportunities</span></div>
   </div>
-</div>
-</section>
+</div></section>
 
-<section id="skills" class="section light">
-<div class="wrap">
-  <div class="number">02 / SKILLS</div><h2>Tools I work with.</h2>
-  <div class="cards skills">
-    <div><small>01</small><h3>Programming</h3><p>Python · Java</p></div>
-    <div><small>02</small><h3>Data & Database</h3><p>Data Analytics · MySQL · Big Data</p></div>
-    <div><small>03</small><h3>AI & Emerging Tech</h3><p>Machine Learning · RAG · Blockchain</p></div>
-    <div><small>04</small><h3>Development</h3><p>Front-End · UX Design · Git/GitHub · LaTeX</p></div>
+<section id="skills"><div class="container">
+  <h2 class="section-title"><span class="ico">&lt;/&gt;</span> Skills</h2>
+  <div class="skills">
+    <div class="skill"><div class="sico">🐍</div><span>Python</span></div><div class="skill"><div class="sico">☕</div><span>Java</span></div>
+    <div class="skill"><div class="sico">▣</div><span>MySQL</span></div><div class="skill"><div class="sico">▥</div><span>Data Analytics</span></div>
+    <div class="skill"><div class="sico">◉</div><span>AI / ML</span></div><div class="skill"><div class="sico">⬡</div><span>Blockchain</span></div>
+    <div class="skill"><div class="sico">▤</div><span>RAG Systems</span></div><div class="skill"><div class="sico">H5</div><span>HTML</span></div>
+    <div class="skill"><div class="sico">CSS</div><span>CSS</span></div><div class="skill"><div class="sico">JS</div><span>JavaScript</span></div>
+    <div class="skill"><div class="sico">◫</div><span>UX Design</span></div><div class="skill"><div class="sico">⌘</div><span>Git / GitHub</span></div>
   </div>
-</div>
-</section>
+</div></section>
 
-<section id="projects" class="section">
-<div class="wrap">
-  <div class="number">03 / PROJECTS</div><h2>What I've been building.</h2>
+<section id="projects"><div class="container">
+  <div class="projects-head"><h2 class="section-title"><span class="ico">▱</span> Projects</h2><a class="outline" href="#projects">View All Projects →</a></div>
   <div class="projects">
-    <article class="project featured">
-      <div class="project-no">01 <b>FEATURED</b></div>
-      <h3>Online Voting System Using Blockchain</h3>
-      <p>A secure and transparent online voting concept focused on voter authentication, vote processing, data integrity and tamper-resistant records.</p>
-      <div class="tags"><i>Blockchain</i><i>Web</i><i>Database</i><i>Security</i></div>
-    </article>
-    <article class="project">
-      <div class="project-no">02</div>
-      <h3>Offline Disaster Management & Node–Hub Connectivity Using RAG</h3>
-      <p>An offline disaster-management concept combining node–hub communication with RAG-based access to relevant emergency information during connectivity disruptions.</p>
-      <div class="tags"><i>RAG</i><i>Networking</i><i>AI</i><i>Database</i></div>
-    </article>
-    <article class="project">
-      <div class="project-no">03</div>
-      <h3>AI-Based Farmer Query Support & Advisory System</h3>
-      <p>An AI-powered advisory concept where farmers can upload crop or plant-disease images and interact with a chatbot for identification and guidance.</p>
-      <div class="tags"><i>AI/ML</i><i>Computer Vision</i><i>Chatbot</i><i>AgriTech</i></div>
-    </article>
+    <article class="project"><div class="project-body"><h3>Online Voting System Using Blockchain</h3><p>A blockchain-oriented voting project focused on secure, transparent and tamper-resistant digital voting workflows.</p><div class="tags"><span class="tag">Blockchain</span><span class="tag">Web</span><span class="tag">Database</span></div></div><div class="project-foot"><a href="#">View Project →</a><span>⌘</span></div></article>
+    <article class="project"><div class="project-body"><h3>Offline Disaster Management using RAG</h3><p>An offline disaster-management concept using Retrieval-Augmented Generation for accessible, context-aware information support.</p><div class="tags"><span class="tag">Python</span><span class="tag">RAG</span><span class="tag">AI/ML</span></div></div><div class="project-foot"><a href="#">View Project →</a><span>⌘</span></div></article>
+    <article class="project"><div class="project-body"><h3>AI-Based Farmer Query Support & Advisory System</h3><p>A farmer-support application concept where crop images can be uploaded and discussed with an AI chatbot for guidance.</p><div class="tags"><span class="tag">AI/ML</span><span class="tag">Computer Vision</span><span class="tag">Chatbot</span></div></div><div class="project-foot"><a href="#">View Project →</a><span>⌘</span></div></article>
   </div>
-</div>
-</section>
+</div></section>
 
-<section id="certifications" class="section light">
-<div class="wrap">
-  <div class="number">04 / CERTIFICATIONS</div><h2>Continuous learning.</h2>
-  <div class="certs">
-    <div><span>DATA</span><h3>GenAI Powered Data Analytics Job Simulation</h3><p>Forage · July 2026</p></div>
-    <div><span>AI / DATA</span><h3>Fundamentals of Machine Learning & Big Data</h3><p>CMRIT Centre of Excellence · Five Stars</p></div>
-    <div><span>HACKATHON</span><h3>Internal Smart India Hackathon 2025</h3><p>CMRIT · Participation</p></div>
-    <div><span>HACKATHON</span><h3>CODE RED 3.0</h3><p>National-level 24-hour hackathon</p></div>
-    <div><span>LANGUAGE</span><h3>EF SET English Certificate</h3><p>C1 Advanced · 66/100</p></div>
-    <div><span>ACTIVITIES</span><h3>MY Bharat & Social Awareness</h3><p>Recognition and participation certificates</p></div>
+<section id="education"><div class="container">
+  <h2 class="section-title"><span class="ico">◇</span> Education</h2>
+  <div class="edu">
+    <div class="edu-card"><h3>B.E. — Information Science & Engineering</h3><p>CMR Institute of Technology, Bangalore</p><p>3rd Year Engineering Student</p></div>
+    <div class="edu-card"><h3>Technical Focus</h3><p>Programming • Data Analytics • AI/ML • Blockchain • RAG • Web Development</p></div>
   </div>
-</div>
-</section>
+</div></section>
 
-<section class="education">
-<div class="wrap edu">
-  <div><div class="number">05 / EDUCATION</div><h2>CMR Institute of Technology</h2><p>Information Science & Engineering · 3rd Year · Bangalore</p></div>
-  <div class="degree">ISE<small>ENGINEERING</small></div>
-</div>
-</section>
-
-<section id="contact" class="contact">
-<div class="wrap contact-grid">
-  <div><div class="number">06 / CONTACT</div><h2>Let's build something <em>meaningful.</em></h2><p>Open to internships, projects and technical collaborations.</p></div>
-  <div class="contact-list">
-    <a href="mailto:prajwalbs273@gmail.com">prajwalbs273@gmail.com</a>
-    <a href="tel:+919448420692">+91 9448420692</a>
-    <a href="https://www.linkedin.com/in/prajwal-bs-a90b32333" target="_blank">LinkedIn ↗</a>
-    <a href="https://github.com/Prajwal-171" target="_blank">GitHub ↗</a>
+<section id="contact"><div class="container contact">
+  <div class="contact-copy"><h2 class="section-title"><span class="ico">✉</span> Get In Touch</h2><p>I'm open to discussing new projects, creative ideas, internships, and opportunities to be part of your vision.</p></div>
+  <div class="contact-cards">
+    <a class="contact-card" href="mailto:prajwalbs273@gmail.com"><small>Email</small><strong>prajwalbs273@gmail.com</strong></a>
+    <a class="contact-card" href="tel:+919448420692"><small>Phone</small><strong>+91 9448420692</strong></a>
+    <a class="contact-card" href="https://www.linkedin.com/in/prajwal-bs-a90b32333" target="_blank"><small>LinkedIn</small><strong>linkedin.com/in/prajwal-bs-a90b32333</strong></a>
+    <a class="contact-card" href="https://github.com/Prajwal-171" target="_blank"><small>GitHub</small><strong>github.com/Prajwal-171</strong></a>
   </div>
-</div>
-</section>
+</div></section>
 </main>
 
-<footer><div class="wrap">© 2026 Prajwal BS · Information Science & Engineering</div></footer>
+<footer><div class="container footin"><span>© 2026 Prajwal BS. All rights reserved.</span><span>Designed & Developed by Prajwal BS.</span></div></footer>
+
 <script>
-const menu=document.querySelector('.menu'), links=document.querySelector('.links');
-menu.onclick=()=>links.classList.toggle('open');
-document.querySelectorAll('.links a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
+function toggleMenu(){
+  const l=document.querySelector('.links');
+  l.style.display=l.style.display==='flex'?'none':'flex';
+  if(l.style.display==='flex'){
+    l.style.position='absolute';l.style.top='70px';l.style.left='0';l.style.right='0';
+    l.style.background='#030b1d';l.style.flexDirection='column';l.style.padding='15px 25px';l.style.gap='8px';
+  }
+}
+const links=[...document.querySelectorAll('.links a')];
+const sections=[...document.querySelectorAll('main section')];
+window.addEventListener('scroll',()=>{let y=scrollY+130;let cur='home';sections.forEach(s=>{if(y>=s.offsetTop)cur=s.id});links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur))});
 </script>
-</body></html>
+</body>
+</html>
