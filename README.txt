@@ -1,9 +1,10 @@
-# Prajwal BS — Portfolio
-
-Responsive dark/purple portfolio matching the requested UI style.
-
+Prajwal BS Portfolio – New UI
 Files:
 - index.html
 - profile.png
 
-Upload these files to the root of your GitHub Pages repository.
+Upload index.html and profile.png to the root of your existing GitHub repository:
+Prajwal-171/prajwal-portfolio
+
+GitHub Pages:
+https://prajwal-171.github.io/prajwal-portfolio/
