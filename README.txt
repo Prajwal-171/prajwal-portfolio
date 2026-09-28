@@ -1,10 +1,15 @@
-Prajwal BS Portfolio – New UI
-Files:
-- index.html
-- profile.png
+Prajwal BS Portfolio - Final Version
 
-Upload index.html and profile.png to the root of your existing GitHub repository:
+Includes:
+- Updated portrait profile photo
+- Pursuing 2028 engineering education wording
+- DeepForensic current project
+- Project Spector
+- Travora
+- Online Voting System Using Blockchain
+
+Travora project link:
+https://travora2o.lovable.app
+
+Upload index.html and profile.png to the root of:
 Prajwal-171/prajwal-portfolio
-
-GitHub Pages:
-https://prajwal-171.github.io/prajwal-portfolio/
